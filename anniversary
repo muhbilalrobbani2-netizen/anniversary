@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Candle Light Dinner - 7th Anniversary</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(180deg,#3b0000,#5c0a0a,#220000);
+color:white;
+overflow-x:hidden;
+}
+
+.hidden{
+display:none;
+}
+
+/* ================= OPENING ================= */
+
+#opening{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+position:relative;
+overflow:hidden;
+}
+
+.envelope{
+width:220px;
+height:140px;
+background:#b71c1c;
+position:relative;
+margin:30px auto;
+border-radius:8px;
+}
+
+.envelope:before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#d32f2f;
+clip-path:polygon(0 0,100% 0,50% 60%);
+transform-origin:top;
+transition:1.5s;
+}
+
+.envelope.open:before{
+transform:rotateX(180deg);
+}
+
+.open-btn{
+padding:12px 30px;
+border:none;
+border-radius:30px;
+background:#ffb3b3;
+color:#6a0000;
+font-weight:bold;
+cursor:pointer;
+font-size:16px;
+}
+
+.title-love{
+font-family:'Great Vibes',cursive;
+font-size:42px;
+margin-bottom:10px;
+}
+
+.fade-out{
+animation:fadeOut 2s forwards;
+}
+
+@keyframes fadeOut{
+to{
+opacity:0;
+visibility:hidden;
+}
+}
+
+/* ================= MAIN ================= */
+
+#main{
+display:none;
+padding:25px;
+text-align:center;
+animation:fadeIn 2s;
+}
+
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
+}
+
+.main-title{
+font-family:'Great Vibes',cursive;
+font-size:55px;
+margin-top:20px;
+}
+
+.subtitle{
+font-size:28px;
+margin-bottom:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:20px;
+margin:20px auto;
+max-width:700px;
+}
+
+.info{
+line-height:1.9;
+margin-top:20px;
+}
+
+.countdown{
+font-size:24px;
+font-weight:bold;
+margin-top:15px;
+}
+
+.question{
+margin-top:30px;
+}
+
+.answer-btn{
+padding:12px 25px;
+margin:10px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
+}
+
+.yes{
+background:#ff4081;
+color:white;
+}
+
+.no{
+background:white;
+color:#a00000;
+position:relative;
+}
+
+/* HEARTS */
+
+.heart{
+position:fixed;
+font-size:25px;
+animation:float 4s linear forwards;
+pointer-events:none;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0) scale(0.5);
+opacity:1;
+}
+100%{
+transform:translateY(-800px) scale(2);
+opacity:0;
+}
+}
+
+/* ROSE */
+
+.rose{
+position:absolute;
+top:-50px;
+font-size:25px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(120vh) rotate(360deg);
+opacity:0;
+}
+}
+
+/* SUCCESS */
+
+#success{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+font-size:28px;
+animation:fadeIn 2s;
+}
+
+#success h1{
+font-family:'Great Vibes',cursive;
+font-size:60px;
+margin-bottom:20px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- MUSIK -->
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- OPENING -->
+<section id="opening">
+
+<div class="title-love">❤️</div>
+
+<h2>Untuk Istriku Tercinta<br>Aminah Sadiyah</h2>
+
+<br>
+
+<p>Sebuah pesan spesial menunggumu...</p>
+
+<div class="envelope" id="envelope"></div>
+
+<button class="open-btn" onclick="openInvitation()">
+Buka
+</button>
+
+</section>
+
+<!-- MAIN -->
+<section id="main">
+
+<div style="font-size:55px;">🕯️</div>
+
+<div class="main-title">
+Candle Light Dinner
+</div>
+
+<div class="subtitle">
+7th Anniversary
+</div>
+
+<div class="card">
+
+<h3>Untuk istriku tercinta,<br>Aminah Sadiyah</h3>
+
+<br>
+
+<p>
+Tujuh tahun telah berlalu sejak kita memulai perjalanan bersama.
+Ada banyak tawa yang kita bagi, banyak doa yang kita panjatkan,
+dan banyak kenangan yang akan selalu menjadi bagian dari kisah kita.
+</p>
+
+<br>
+
+<p>
+Terima kasih telah menjadi teman hidup terbaikku,
+tempat pulangku, dan alasan mengapa setiap hari terasa lebih berarti.
+</p>
+
+<br>
+
+<p>
+Pada malam yang istimewa ini, izinkan aku mengajakmu menikmati waktu berdua,
+mengulang kembali hangatnya cerita yang telah kita rajut bersama.
+</p>
+
+<br>
+
+<h2>❤️</h2>
+
+<div class="info">
+Hari : Ahad<br>
+Tanggal : 21 Juni 2026<br>
+Pukul : 19.00 WIB<br>
+Tempat : Little Emily
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>⏳ Menuju Makan Malam Kita</h2>
+
+<div id="countdown" class="countdown"></div>
+
+</div>
+
+<div class="question">
+
+<h2>Apakah kamu mau menemaniku malam ini?</h2>
+
+<br>
+
+<button class="answer-btn yes" onclick="acceptLove()">
+Ya, tentu ❤️
+</button>
+
+<button class="answer-btn no" id="noBtn">
+Tidak 😅
+</button>
+
+</div>
+
+</section>
+
+<!-- SUCCESS -->
+<section id="success">
+
+<div>
+
+<h1>❤️❤️❤️</h1>
+
+<p>
+Terima kasih, Sayang.
+</p>
+
+<br>
+
+<p>
+Aku tidak sabar menunggu malam indah bersama kamu.
+</p>
+
+<br>
+
+<h2>
+Happy 7th Anniversary
+</h2>
+
+<h1>
+I Love You ❤️
+</h1>
+
+</div>
+
+</section>
+
+<script>
+
+/* OPEN INVITATION */
+
+function openInvitation(){
+
+document.getElementById('envelope')
+.classList.add('open');
+
+document.getElementById('music')
+.play();
+
+for(let i=0;i<40;i++){
+setTimeout(createRose,i*100);
+}
+
+setTimeout(()=>{
+document.getElementById('opening')
+.classList.add('fade-out');
+
+setTimeout(()=>{
+document.getElementById('opening').style.display='none';
+document.getElementById('main').style.display='block';
+},1800);
+
+},2500);
+}
+
+/* ROSE */
+
+function createRose(){
+
+let rose=document.createElement('div');
+
+rose.className='rose';
+rose.innerHTML='🌹';
+
+rose.style.left=Math.random()*100+'%';
+
+rose.style.animationDuration=
+(3+Math.random()*4)+'s';
+
+document.body.appendChild(rose);
+
+setTimeout(()=>{
+rose.remove();
+},7000);
+}
+
+/* COUNTDOWN */
+
+let target=
+new Date("June 21, 2026 19:00:00").getTime();
+
+setInterval(()=>{
+
+let now=new Date().getTime();
+let distance=target-now;
+
+let days=Math.floor(distance/(1000*60*60*24));
+let hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+let minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+let seconds=Math.floor((distance%(1000*60))/1000);
+
+document.getElementById('countdown').innerHTML=
+days+" Hari "+
+hours+" Jam "+
+minutes+" Menit "+
+seconds+" Detik";
+
+},1000);
+
+/* NO BUTTON ESCAPE */
+
+let noBtn=document.getElementById('noBtn');
+
+noBtn.addEventListener('mouseover',moveButton);
+noBtn.addEventListener('touchstart',moveButton);
+
+function moveButton(){
+
+let x=Math.random()*250-120;
+let y=Math.random()*180-90;
+
+noBtn.style.transform=
+`translate(${x}px,${y}px)`;
+}
+
+/* ACCEPT */
+
+function acceptLove(){
+
+document.getElementById('main').style.display='none';
+document.getElementById('success').style.display='flex';
+
+setInterval(()=>{
+
+let heart=document.createElement('div');
+
+heart.className='heart';
+heart.innerHTML='❤️';
+
+heart.style.left=Math.random()*100+'vw';
+heart.style.bottom='0';
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},4000);
+
+},150);
+
+}
+
+</script>
+
+</body>
+</html>
